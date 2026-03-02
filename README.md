@@ -1,14 +1,24 @@
-# Rubiks Maria
+# Speed Cube Sticker Generator
 
-Generate custom sticker sets for a 3x3 Rubik's cube using AI-generated artwork. Designed for use with a Cricut cutting machine and the [ROXENDA Speed Cube 3x3x3](https://www.amazon.co.uk/dp/B089VWZK9B).
+Generate custom sticker sets for a 3x3 Rubik's cube. Designed for use with a Cricut cutting machine and the [ROXENDA Speed Cube 3x3x3](https://www.amazon.co.uk/dp/B089VWZK9B).
 
 ## How it works
 
-1. Generate 3x3 grid artwork using an AI image generator (e.g. Google Gemini)
-2. Place the generated images in the project root as `Gemini_Generated_Image_*.png`
+1. Prepare your input images (see requirements below)
+2. Place them in the project root as `*.png` files
 3. Run the build pipeline to produce print-and-cut outputs
 
 The cut template accounts for the cube's sticker geometry — rounded corners, gaps between tiles, and the octagonal center sticker.
+
+## Input image requirements
+
+Each input image should be a **square PNG** containing a **3x3 grid** of artwork — one cell per sticker face. The image is split into equal thirds in each direction, so:
+
+- The grid should be evenly divided into 9 cells (3 rows x 3 columns)
+- Each cell contains the artwork for one sticker
+- Dark outlines or borders between cells are automatically trimmed
+- Higher resolution images produce better results (2048x2048 or above recommended)
+- Images must be named with a `Gemini_Generated_Image_` prefix (e.g. `Gemini_Generated_Image_myface.png`) or edit the glob pattern in `build_outputs.py` to match your filenames
 
 ## Setup
 
