@@ -12,8 +12,8 @@ check_overlay.png
 check_composite_overlay.png
 check_masked_overlay.png
 
-# Input images (large Gemini-generated files)
-Gemini_Generated_Image_*.png
+# Input images
+inputs/
 shapes.png
 
 # Python

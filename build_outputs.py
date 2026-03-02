@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate production outputs for Cricut from Gemini 3x3 grid images.
+"""Generate production outputs for Cricut from 3x3 grid images.
 
 Outputs per image:
   1. composites/<name>.png  — recomposed image (no cut overlay), white background
@@ -202,7 +202,7 @@ def main():
     )
     overlay_img = Image.open(BytesIO(overlay_png)).convert("RGBA")
 
-    for img_path in sorted(glob.glob(str(INPUT_DIR / "Gemini_*.png"))):
+    for img_path in sorted(glob.glob(str(INPUT_DIR / "inputs" / "*.png"))):
         img = Image.open(img_path).convert("RGBA")
         name = Path(img_path).stem
         cells = extract_cells(img)

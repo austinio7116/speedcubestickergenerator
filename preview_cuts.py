@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract 9 cells from each Gemini 3x3 grid image and recompose them
+"""Extract 9 cells from each 3x3 grid image and recompose them
 onto a new canvas aligned with the SVG cut template.
 
 For each cell, we auto-detect the colored content bounds (skipping any
@@ -114,7 +114,7 @@ def main():
     )
     overlay_img = Image.open(BytesIO(overlay_png)).convert("RGBA")
 
-    for img_path in sorted(glob.glob(str(INPUT_DIR / "Gemini_*.png"))):
+    for img_path in sorted(glob.glob(str(INPUT_DIR / "inputs" / "*.png"))):
         img = Image.open(img_path).convert("RGBA")
         cells = extract_cells(img)
 
