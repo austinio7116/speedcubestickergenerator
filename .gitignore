@@ -1,0 +1,21 @@
+# Generated output directories
+composites/
+masked/
+pdf/
+cuts/
+previews/
+
+# Generated SVGs and overlay check images
+rubiks_face.svg
+rubiks_face_cutlines.svg
+check_overlay.png
+check_composite_overlay.png
+check_masked_overlay.png
+
+# Input images (large Gemini-generated files)
+Gemini_Generated_Image_*.png
+shapes.png
+
+# Python
+__pycache__/
+*.pyc
